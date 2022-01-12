@@ -11,7 +11,6 @@ public class EBOB {
 
         int ebob = 1;
         int ekok = 1;
-        boolean asd = true;
         int i = n1;
                           
         while(i > 1){
