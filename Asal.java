@@ -1,22 +1,30 @@
+import java.util.Scanner;
+
 public class Asal {
+
+    static boolean asal(int sayi, int i){
+
+        if(sayi <= 2){
+            return (sayi==2) ? true: false;
+        }
+        if(sayi % i == 0){
+            return false;
+        }
+        if(i * i > sayi){
+            return true;
+        }
+
+        return asal(sayi,i+1);
+    }
     public static void main(String[] args){
 
-        int i = 0;
-        int num = 0;
+        Scanner inp = new Scanner(System.in);
 
-        String asal = "";
+        int sayi;
 
-        for(i = 1; i <= 100;i++){
-            int counter = 0;
-            for(num = i; num >=1; num--){
-                if(i % num == 0){
-                    counter += 1;
-                }
-            }
-            if(counter == 2){
-                asal = asal + i + " ";
-            }
-        }
-        System.out.println(asal);
+        System.out.println("Sayı giriniz: ");
+        sayi = inp.nextInt();
+
+        System.out.println(asal(sayi,2));
     }
 }
